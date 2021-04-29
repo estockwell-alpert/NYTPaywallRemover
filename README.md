@@ -20,3 +20,6 @@ Extension to remove the NYT paywall on nytimes.com
 7. Enjoy your reading!
 
 *Note: Temporary extensions need to be reloaded every time you close and re-open the Firefox browser. You can do some work to add it permanently but I don't have instructions for that at this time.*
+
+# Internet Explorer
+1. Don't use Internet Explorer
