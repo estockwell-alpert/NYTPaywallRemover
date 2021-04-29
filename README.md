@@ -1,7 +1,7 @@
 # NYTPaywallRemover
 Extension to remove the NYT paywall on nytimes.com
 
-#Chrome
+# Chrome
 1. Download the zip file for Chrome from the Releases page
 2. Unzip the zip file
 3. Go to chrome://extensions/
@@ -10,7 +10,7 @@ Extension to remove the NYT paywall on nytimes.com
 6. Once the paywall appears, click the extension button to remove it.
 7. Enjoy your reading!
 
-#Firefox
+# Firefox
 1. Download the zip file for Firefox from the Releases page
 2. Unzip the zip file
 3. Go to about:debugging#/runtime/this-firefox
