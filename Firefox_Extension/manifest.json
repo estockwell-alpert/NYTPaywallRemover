@@ -17,11 +17,7 @@
   "browser_action": {
     "default_icon": "icons/koolaid_32.png",
     "default_title": "NYT Paywall Remover",
-    "default_popup": "popup/choose_beast.html"
-  },
-
-  "web_accessible_resources": [
-    "beasts/koolaid_128.png"
-  ]
+    "default_popup": "popup/button.html"
+  }
 
 }

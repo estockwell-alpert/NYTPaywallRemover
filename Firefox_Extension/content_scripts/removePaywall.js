@@ -14,7 +14,7 @@
    * create and style an IMG node pointing to
    * that image, then insert the node into the document.
    */
-  function insertBeast(beastURL) {
+  function removePaywall() {
     document.getElementById("gateway-content").remove();
     document.getElementsByClassName("css-mcm29f")[0].style.position = "initial";
     document.getElementsByClassName("css-1bd8bfl")[0].style.background = "none";
@@ -25,8 +25,8 @@
    * Call "beastify()" or "reset()".
   */
   browser.runtime.onMessage.addListener((message) => {
-    if (message.command === "beastify") {
-      insertBeast(message.beastURL);
+    if (message.command === "removepaywall") {
+      removePaywall();
     }
   });
 

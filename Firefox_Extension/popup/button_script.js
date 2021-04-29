@@ -13,43 +13,11 @@ const hidePage = `body > :not(.beastify-image) {
 function listenForClicks() {
   document.addEventListener("click", (e) => {
 
-    /**
-     * Given the name of a beast, get the URL to the corresponding image.
-     */
-    function beastNameToURL(beastName) {
-      switch (beastName) {
-        case "Frog":
-          return browser.extension.getURL("beasts/koolaid_128.png");
-        case "Snake":
-          return browser.extension.getURL("beasts/koolaid_128.png");
-        case "Turtle":
-          return browser.extension.getURL("beasts/koolaid_128.png");
-      }
-    }
 
-    /**
-     * Insert the page-hiding CSS into the active tab,
-     * then get the beast URL and
-     * send a "beastify" message to the content script in the active tab.
-     */
-    function beastify(tabs) {
-      let url = beastNameToURL(e.target.textContent);
+    function removePaywall(tabs) {
       browser.tabs.sendMessage(tabs[0].id, {
-        command: "beastify",
-        beastURL: url
+        command: "removepaywall",
 	  });
-    }
-
-    /**
-     * Remove the page-hiding CSS from the active tab,
-     * send a "reset" message to the content script in the active tab.
-     */
-    function reset(tabs) {
-      browser.tabs.removeCSS({code: hidePage}).then(() => {
-        browser.tabs.sendMessage(tabs[0].id, {
-          command: "reset",
-        });
-      });
     }
 
     /**
@@ -63,14 +31,9 @@ function listenForClicks() {
      * Get the active tab,
      * then call "beastify()" or "reset()" as appropriate.
      */
-    if (e.target.classList.contains("beast")) {
+    if (e.target.classList.contains("koolaid")) {
       browser.tabs.query({active: true, currentWindow: true})
-        .then(beastify)
-        .catch(reportError);
-    }
-    else if (e.target.classList.contains("reset")) {
-      browser.tabs.query({active: true, currentWindow: true})
-        .then(reset)
+        .then(removePaywall)
         .catch(reportError);
     }
   });
@@ -91,6 +54,6 @@ function reportExecuteScriptError(error) {
  * and add a click handler.
  * If we couldn't inject the script, handle the error.
  */
-browser.tabs.executeScript({file: "/content_scripts/beastify.js"})
+browser.tabs.executeScript({file: "/content_scripts/removePaywall.js"})
 .then(listenForClicks)
 .catch(reportExecuteScriptError);
