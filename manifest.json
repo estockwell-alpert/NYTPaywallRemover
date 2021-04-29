@@ -10,16 +10,16 @@
   "action": {
     "default_popup": "button.html",
 	"default_icon": {
-      "16": "/images/brokenwall_16.png",
-      "32": "/images/brokenwall_32.png",
-      "48": "/images/brokenwall_48.png",
-      "128": "/images/brokenwall_128.png"
+      "16": "/images/koolaid_16.png",
+      "32": "/images/koolaid_32.png",
+      "48": "/images/koolaid_48.png",
+      "128": "/images/koolaid_128.png"
     }
   },
   "icons": {
-    "16": "/images/brokenwall_16.png",
-    "32": "/images/brokenwall_32.png",
-    "48": "/images/brokenwall_48.png",
-    "128": "/images/brokenwall_128.png"
+    "16": "/images/koolaid_16.png",
+    "32": "/images/koolaid_32.png",
+    "48": "/images/koolaid_48.png",
+    "128": "/images/koolaid_128.png"
   }
 }
